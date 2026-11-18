@@ -23,8 +23,8 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-const title = "RERA WEB — Software Development Startup from India";
-const ogTitle = "RERA WEB — Ideas Deserve Well-Built Software";
+const title = "RERA WEB — Software Development, Web Platforms & AI Engineering";
+const ogTitle = "RERA WEB — Web Development, Custom Software, AI Automation, Web3 & Cloud Engineering";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -37,11 +37,16 @@ export const metadata: Metadata = {
     "web development company",
     "custom software engineering",
     "AI automation startup",
-    "product design studio",
+    "UI UX product design studio",
+    "Web3 and blockchain development",
+    "backend and cloud architecture",
     "intelligent software",
     "Next.js web development",
     "Gaurav & Abhijeet",
     "independent technology startup",
+    "enterprise SaaS solutions",
+    "smart contracts",
+    "PostgreSQL Node.js engineering",
   ],
   authors: [
     { name: "Gaurav", url: site.url },
