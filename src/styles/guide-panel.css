@@ -1,0 +1,116 @@
+/* Patch console: search, segmented lists, recents, shortcuts. Paper tokens come from .guide-dialog. */
+.guide-dialog {
+  --guide-accent: #9d350f;
+  width: min(492px, calc(100vw - 44px));
+  max-height: min(790px, calc(100dvh - 64px));
+}
+.guide-dialog-inner { padding: 0 22px 6px; }
+.guide-dialog-kicker { gap: 10px; }
+.guide-version {
+  margin-left: auto; padding: 3px 6px; border: 1px solid var(--guide-rule);
+  color: var(--guide-dim); font-size: 8px; line-height: 1.4;
+}
+.guide-dialog-kicker button { margin-right: -8px; margin-left: 4px; }
+
+.guide-find {
+  display: grid; grid-template-columns: 17px minmax(0,1fr) auto; align-items: center; gap: 11px;
+  min-height: 54px; padding-inline: 2px; border-bottom: 1px solid var(--guide-rule); color: var(--guide-dim);
+}
+.guide-find:focus-within { border-bottom-color: var(--guide-accent); }
+.guide-find input {
+  width: 100%; min-width: 0; height: 44px; padding: 0; border: 0; background: transparent;
+  color: var(--guide-text); font-size: 16px; caret-color: var(--guide-accent);
+}
+.guide-find input::placeholder { color: var(--guide-dim); font-size: 14px; }
+.guide-find input::-webkit-search-cancel-button { display: none; }
+.guide-find input:focus { outline: none; }
+.guide-find input:focus-visible { outline: 2px solid var(--ember); outline-offset: 3px; border-radius: 2px; }
+.guide-find-key, .guide-find-clear {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  border: 1px solid var(--guide-rule); color: var(--guide-dim); background: transparent;
+  font: 9px/1 var(--font-geist-mono), monospace; letter-spacing: .06em; text-transform: uppercase;
+}
+.guide-find-key { width: 26px; height: 26px; }
+.guide-find-clear { min-height: 30px; padding-inline: 8px; font-size: 9px; }
+.guide-find-clear:hover { background: #e6e0d4; color: var(--guide-text); }
+.guide-find-clear span { font-size: 13px; }
+
+.guide-segments { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); border-bottom: 1px solid var(--guide-rule); }
+.guide-segments button {
+  position: relative; display: flex; align-items: baseline; justify-content: space-between; gap: 8px;
+  min-height: 46px; padding: 0 11px; background: transparent; border-right: 1px solid var(--guide-rule);
+  color: var(--guide-dim); font-size: 12px; text-align: left; transition: background-color .2s, color .2s;
+}
+.guide-segments button:last-child { border-right: 0; }
+.guide-segments button > .mono { font-size: 8px; }
+.guide-segments button::before {
+  position: absolute; content: ""; inset: auto 0 -1px 0; height: 2px;
+  background: var(--ember); transform: scaleX(0); transform-origin: left; transition: transform .22s var(--ease);
+}
+.guide-segments button:hover { background: #e7e1d5; color: var(--guide-text); }
+.guide-segments button[aria-pressed="true"] { background: #f7f3ea; color: var(--guide-text); font-weight: 500; }
+.guide-segments button[aria-pressed="true"]::before { transform: scaleX(1); }
+
+.guide-list { max-height: min(42vh, 336px); overflow-y: auto; overscroll-behavior: contain; border-top: 0; }
+.guide-shortcuts > a { grid-template-columns: 26px minmax(0,1fr) 18px; gap: 11px; padding-inline: 6px 4px; }
+.guide-shortcuts > a[aria-current="page"] { background: #e7e1d5; }
+.guide-item-copy > span { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.guide-here {
+  flex: none; padding: 2px 4px; border: 1px solid var(--guide-rule);
+  color: var(--guide-dim); font-size: 7px; font-style: normal; letter-spacing: .07em;
+}
+.guide-empty { padding: 22px 6px; color: var(--guide-dim); font-size: 14px; line-height: 1.65; }
+.guide-empty a { color: var(--guide-text); text-decoration: underline; text-underline-offset: 3px; }
+
+.guide-results {
+  display: flex; justify-content: space-between; gap: 12px; padding: 9px 6px;
+  border-bottom: 1px solid var(--guide-rule); color: var(--guide-dim); font-size: 8px;
+}
+.guide-recents { display: flex; flex-wrap: wrap; align-items: center; gap: 7px; padding: 11px 6px; border-bottom: 1px solid var(--guide-rule); }
+.guide-recents > .mono { color: var(--guide-dim); font-size: 8px; margin-right: 2px; }
+.guide-recents a {
+  display: inline-flex; align-items: center; min-height: 32px; padding: 0 9px;
+  border: 1px solid var(--guide-rule); color: var(--guide-text); font-size: 12px; text-transform: capitalize;
+}
+.guide-recents a:hover { background: #e7e1d5; border-color: var(--guide-dim); }
+
+.guide-dialog-footer { border-top: 0; padding-block: 11px 8px; }
+.guide-dialog-footer > span { letter-spacing: .05em; }
+.guide-keys {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px;
+  padding: 9px 6px 11px; border-top: 1px solid var(--guide-rule); color: var(--guide-dim); font-size: 8px;
+}
+.guide-keys-id { margin-left: auto; }
+
+.guide-dock-key {
+  display: grid; place-items: center; width: 21px; height: 21px; flex: none;
+  border: 1px solid var(--line-strong); color: var(--stone); font-size: 8px;
+}
+/* Drawn in CSS so the launcher's visible text still matches its accessible name. */
+.guide-dock-key::after { content: "G"; }
+.guide-dock:hover .guide-dock-key { border-color: var(--stone); color: var(--bone); }
+.hero-bottom { padding-right: clamp(168px, 15vw, 216px); }
+
+/* Two founders share the letterform treatments. */
+.founder-name, .founder-route-name { font-size: clamp(46px, 6.3vw, 104px); line-height: 1.07; white-space: normal; }
+.founder-name > span, .founder-route-name > span { display: block; color: inherit; }
+.founder-name > span:last-child, .founder-route-name > span:last-child { color: #4a463d; }
+
+@media (max-width: 1279px) { .guide-dock-key { display: none; } .hero-bottom { padding-right: 150px; } }
+@media (max-width: 767px) {
+  .guide-dialog { width: min(492px, calc(100vw - 24px)); max-height: calc(100dvh - 24px); }
+  .guide-dialog-inner { padding-inline: 16px; }
+  .guide-find { min-height: 50px; gap: 9px; }
+  .guide-find input { font-size: 16px; }
+  .guide-segments button { min-height: 44px; padding-inline: 8px; font-size: 11px; }
+  .guide-list { max-height: min(38vh, 290px); }
+  .guide-shortcuts > a { grid-template-columns: 22px minmax(0,1fr) 17px; gap: 9px; min-height: 58px; }
+  .guide-item-copy { font-size: 14px; }
+  .guide-item-copy small { font-size: 11px; }
+  .guide-keys { gap: 5px 11px; font-size: 7px; }
+  .hero-bottom { padding-right: 68px; }
+  .founder-name, .founder-route-name { font-size: clamp(40px, 11.5vw, 78px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .guide-segments button::before, .guide-segments button, .guide-recents a { transition: none; }
+}

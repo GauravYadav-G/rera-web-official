@@ -1,0 +1,19 @@
+@import "tailwindcss";
+@import "../styles/design.css";
+@import "../styles/stack.css";
+@import "../styles/sections.css";
+@import "../styles/responsive.css";
+@import "../styles/polish.css";
+@import "../styles/interactions.css";
+@import "../styles/pages.css";
+@import "../styles/media-guide.css";
+@import "../styles/paper-media.css";
+@import "../styles/guide-panel.css";
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-bone: var(--bone);
+  --color-ember: var(--ember);
+  --font-sans: var(--font-geist);
+  --font-mono: var(--font-geist-mono);
+}

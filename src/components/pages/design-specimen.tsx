@@ -1,0 +1,4 @@
+import { RegistrationMarks } from "@/components/ui";
+export function DesignSpecimen() {
+  return <div className="route-design-specimen" role="img" aria-label="Illustrative design system: expressive typography, a precise grid, monochrome tokens, and considered interface components"><RegistrationMarks/><div aria-hidden="true"><div className="specimen-meta mono"><span>FORM / FUNCTION / FEELING</span><span>DESIGN STUDY — 001</span></div><div className="specimen-type">Aa<em>Aa</em><span className="specimen-caret"/></div><div className="specimen-baseline mono"><span>GEIST / 500</span><span>INSTRUMENT SERIF / ITALIC</span></div><div className="specimen-component-row"><div className="specimen-tokens"><i/><i/><i/><i/></div><div className="specimen-button mono">Make it meaningful <span>↗</span></div></div><div className="specimen-bottom mono"><span>ONE SYSTEM. A THOUSAND DECISIONS.</span><span>ILLUSTRATIVE</span></div></div></div>;
+}
