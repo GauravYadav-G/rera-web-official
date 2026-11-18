@@ -1,5 +1,6 @@
 export const site = {
   name: "RERA WEB",
+  tagline: "Ideas deserve well-built software.",
   founder: "Gaurav",
   coFounder: "Abhijeet",
   founders: [
@@ -9,7 +10,7 @@ export const site = {
   foundersLabel: "Gaurav & Abhijeet",
   foundersRole: "Founders, RERA WEB",
   description: "An independent technology startup from India, building digital experiences and intelligent software for ideas that deserve to go further.",
-  url: process.env.NEXT_PUBLIC_SITE_URL || null,
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://reraweb.vercel.app",
   contactEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL || null,
   phone: null as string | null,
   locationLabel: "India" as string | null,
