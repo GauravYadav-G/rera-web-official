@@ -20,6 +20,8 @@ export function Logo({ className = "", onClick }: { className?: string; onClick?
             width={32}
             height={32}
             priority
+            unoptimized
+            quality={100}
             className="brand-mark-img"
           />
         </span>
