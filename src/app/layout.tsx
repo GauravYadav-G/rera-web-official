@@ -24,6 +24,13 @@ export const metadata: Metadata = {
   openGraph: { type: "website", locale: "en_IN", title, description: site.description, siteName: "RERA WEB" },
   twitter: { card: "summary_large_image", title, description: site.description },
   robots: { index: true, follow: true },
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "32x32" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+  },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {

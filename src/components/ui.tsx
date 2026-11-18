@@ -1,9 +1,32 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { ReactNode } from "react";
 import { site } from "@/data/site";
 
-export function Logo() {
-  return <Link prefetch={false} href="/" className="brand" aria-label="RERA WEB, home">{site.logomark && <span className="brand-mark" aria-hidden="true"><i/></span>}<span>RERA WEB</span></Link>;
+export function Logo({ className = "", onClick }: { className?: string; onClick?: () => void }) {
+  return (
+    <Link
+      prefetch={false}
+      href="/"
+      className={`brand ${className}`.trim()}
+      aria-label="RERA WEB, home"
+      onClick={onClick}
+    >
+      {site.logomark && (
+        <span className="brand-mark" aria-hidden="true">
+          <Image
+            src="/images/logo.webp"
+            alt="RERA WEB emblem"
+            width={32}
+            height={32}
+            priority
+            className="brand-mark-img"
+          />
+        </span>
+      )}
+      <span>RERA WEB</span>
+    </Link>
+  );
 }
 export function SectionLabel({ number, children, suffix }: { number?: string; children: ReactNode; suffix?: string }) {
   return <div className="section-label"><span>{number && <span className="section-number">[{number}] </span>}{children}</span><span className="section-label-rule"/>{suffix && <span className="label-suffix">{suffix}</span>}</div>;
