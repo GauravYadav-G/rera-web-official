@@ -9,8 +9,7 @@ export const site = {
   ],
   foundersLabel: "Gaurav & Abhijeet",
   foundersRole: "Founders, RERA WEB",
-  description:
-    "RERA WEB is an independent technology startup founded by Gaurav & Abhijeet in India. We engineer high-performance web development (Next.js & React), custom software architectures, AI & workflow automation, Web3 & blockchain solutions, UI/UX product design, and scalable backend cloud infrastructure. Our objective is to bridge imagination and execution—building dependable, intelligent digital products that scale.",
+  description: "An independent technology startup from India, building digital experiences and intelligent software for ideas that deserve to go further.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://reraweb.vercel.app",
   contactEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL || null,
   phone: null as string | null,

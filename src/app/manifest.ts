@@ -4,7 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "RERA WEB",
     short_name: "RERA WEB",
-    description: "An independent technology startup from India building high-performance web applications, custom software, AI automation, Web3, and cloud infrastructure.",
+    description: "An independent technology startup from India building thoughtful digital experiences, custom software, and intelligent AI automation.",
     start_url: "/",
     display: "standalone",
     background_color: "#0A0A0B",
